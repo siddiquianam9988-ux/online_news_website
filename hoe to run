@@ -1,0 +1,75 @@
+🚀 How to Run the Project
+Method 1: Using GitHub
+Open the GitHub repository.
+Open index.html.
+Enable GitHub Pages from repository settings.
+Open the generated website URL.
+Method 2: Using a Computer
+Download or clone the repository.
+Open the project folder.
+Double-click index.html.
+The website will open in your browser.
+🔎 Search Feature
+
+The website includes a search box that allows users to search news by:
+
+News title
+Category
+Description
+🌙 Dark Mode
+
+Users can switch between:
+
+Light Mode ☀️
+Dark Mode 🌙
+
+by clicking the theme button.
+
+📱 Responsive Design
+
+The website is designed to work on:
+
+Desktop
+Laptop
+Tablet
+Mobile
+⚠️ Disclaimer
+
+This project is created for educational and demonstration purposes.
+
+The news displayed on the website is sample content and is not connected to a live news API or real-time news database.
+
+👨‍💻 Project Purpose
+
+This project demonstrates basic web development concepts including:
+
+HTML page structure
+CSS responsive design
+JavaScript DOM manipulation
+Search functionality
+Modal popup
+Dark mode
+Mobile navigation
+GitHub project hosting
+📄 License
+
+This project is available for educational and personal learning purposes.
+
+⭐ Future Improvements
+
+The project can be extended with:
+
+Live News API
+User Login and Registration
+Admin Dashboard
+Database
+Real-time News Updates
+News Categories API
+User Comments
+Bookmark News
+Backend using Python or Node.js
+🙏 Thank You
+
+Thank you for visiting the NewsHub project.
+
+NewsHub — Simple. Modern. Informative.
