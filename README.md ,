@@ -1,0 +1,72 @@
+# 📰 NewsHub - Online News Website
+
+NewsHub is a modern and responsive online news website created using HTML, CSS and JavaScript.
+
+The website provides a simple interface for reading different categories of news such as India, Technology, Education, Sports, Business and Science.
+
+---
+
+## 🌐 Live Website
+
+After enabling GitHub Pages, your website can be opened using your GitHub Pages URL.
+
+Example:
+
+https://YOUR-USERNAME.github.io/Online-News-Website/
+
+---
+
+## ✨ Features
+
+- 🏠 Modern Home Page
+- 📰 Latest News Section
+- 🇮🇳 India News
+- 💻 Technology News
+- 🎓 Education News
+- 🏆 Sports News
+- 💼 Business News
+- 🔬 Science News
+- 🔍 News Search
+- 🌙 Dark Mode
+- 📱 Responsive Design
+- 📖 Read More News Popup
+- 📧 Contact Form
+- ℹ️ About Us Page
+- 📱 Mobile Friendly Navigation
+
+---
+
+## 🛠️ Technologies Used
+
+### Frontend
+
+- HTML5
+- CSS3
+- JavaScript
+
+### Tools
+
+- GitHub
+- GitHub Pages
+- Visual Studio Code
+
+---
+
+## 📁 Project Structure
+
+```text
+Online-News-Website/
+│
+├── index.html
+├── about.html
+├── contact.html
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   └── script.js
+│
+├── README.md
+│
+└── LICENSE
