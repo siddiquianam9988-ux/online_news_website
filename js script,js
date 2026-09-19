@@ -1,0 +1,310 @@
+const news = [
+    {
+        category: "Technology",
+        title: "Artificial Intelligence is changing modern technology",
+        date: "September 19, 2026",
+        icon: "🤖",
+        description:
+            "Artificial Intelligence is becoming an important part of education, business, software development and many other fields."
+    },
+
+    {
+        category: "India",
+        title: "Digital services continue to expand across India",
+        date: "September 18, 2026",
+        icon: "🇮🇳",
+        description:
+            "Digital platforms and online services are becoming an important part of everyday life across India."
+    },
+
+    {
+        category: "Education",
+        title: "Students adopt new digital learning tools",
+        date: "September 17, 2026",
+        icon: "🎓",
+        description:
+            "Modern digital tools are creating new ways for students to learn, collaborate and develop technical skills."
+    },
+
+    {
+        category: "Sports",
+        title: "Technology changes the modern sports experience",
+        date: "September 16, 2026",
+        icon: "🏆",
+        description:
+            "Data, analytics and digital platforms are helping teams and fans follow sporting events."
+    },
+
+    {
+        category: "Business",
+        title: "Digital businesses explore new opportunities",
+        date: "September 15, 2026",
+        icon: "💼",
+        description:
+            "Companies are using software, data and online platforms to reach customers and develop new services."
+    },
+
+    {
+        category: "Science",
+        title: "New technology is supporting scientific research",
+        date: "September 14, 2026",
+        icon: "🔬",
+        description:
+            "Modern computing and artificial intelligence are helping researchers analyze information and solve complex problems."
+    }
+];
+
+
+// Get news grid
+const newsGrid = document.getElementById("newsGrid");
+
+
+// Display news
+function renderNews(data) {
+
+    if (!newsGrid) {
+        return;
+    }
+
+    newsGrid.innerHTML = "";
+
+    if (data.length === 0) {
+
+        newsGrid.innerHTML = `
+            <p>
+                No news found.
+            </p>
+        `;
+
+        return;
+    }
+
+
+    data.forEach((item, index) => {
+
+        const card = document.createElement("article");
+
+        card.className = "news-card";
+
+        card.innerHTML = `
+
+            <div class="news-img">
+                ${item.icon}
+            </div>
+
+            <div class="news-info">
+
+                <span>
+                    ${item.category}
+                </span>
+
+                <h3>
+                    ${item.title}
+                </h3>
+
+                <p>
+                    ${item.description}
+                </p>
+
+                <small>
+                    ${item.date}
+                </small>
+
+                <br>
+
+                <button onclick="openNews(${index})">
+                    Read More →
+                </button>
+
+            </div>
+        `;
+
+        newsGrid.appendChild(card);
+
+    });
+}
+
+
+// Open news modal
+function openNews(index) {
+
+    const item = news[index];
+
+    if (!item) {
+        return;
+    }
+
+    const modal = document.getElementById("modal");
+
+    const category = document.getElementById("mCategory");
+    const title = document.getElementById("mTitle");
+    const date = document.getElementById("mDate");
+    const icon = document.getElementById("mIcon");
+    const description = document.getElementById("mDesc");
+
+
+    category.textContent = item.category;
+
+    title.textContent = item.title;
+
+    date.textContent = item.date;
+
+    icon.textContent = item.icon;
+
+    description.textContent = item.description;
+
+
+    modal.style.display = "block";
+}
+
+
+// Close modal
+const closeButton = document.getElementById("close");
+
+if (closeButton) {
+
+    closeButton.addEventListener("click", function () {
+
+        document.getElementById("modal").style.display = "none";
+
+    });
+
+}
+
+
+// Close modal by clicking outside
+window.addEventListener("click", function (event) {
+
+    const modal = document.getElementById("modal");
+
+    if (event.target === modal) {
+
+        modal.style.display = "none";
+
+    }
+
+});
+
+
+// Search functionality
+const searchInput = document.getElementById("searchInput");
+
+const searchButton = document.getElementById("searchBtn");
+
+
+function searchNews() {
+
+    const keyword = searchInput.value.toLowerCase().trim();
+
+
+    const filteredNews = news.filter(function (item) {
+
+        return (
+            item.title.toLowerCase().includes(keyword) ||
+            item.category.toLowerCase().includes(keyword) ||
+            item.description.toLowerCase().includes(keyword)
+        );
+
+    });
+
+
+    renderNews(filteredNews);
+}
+
+
+if (searchButton) {
+
+    searchButton.addEventListener("click", searchNews);
+
+}
+
+
+if (searchInput) {
+
+    searchInput.addEventListener("keyup", function (event) {
+
+        if (event.key === "Enter") {
+
+            searchNews();
+
+        }
+
+    });
+
+}
+
+
+// Dark mode
+const themeButton = document.getElementById("themeBtn");
+
+
+if (themeButton) {
+
+    themeButton.addEventListener("click", function () {
+
+        document.body.classList.toggle("dark");
+
+
+        if (document.body.classList.contains("dark")) {
+
+            themeButton.textContent = "☀️";
+
+        } else {
+
+            themeButton.textContent = "🌙";
+
+        }
+
+    });
+
+}
+
+
+// Mobile menu
+const menuButton = document.getElementById("menuBtn");
+
+const navigation = document.getElementById("nav");
+
+
+if (menuButton && navigation) {
+
+    menuButton.addEventListener("click", function () {
+
+        if (navigation.style.display === "flex") {
+
+            navigation.style.display = "none";
+
+        } else {
+
+            navigation.style.display = "flex";
+
+        }
+
+    });
+
+}
+
+
+// Contact form
+const contactForm = document.getElementById("contactForm");
+
+
+if (contactForm) {
+
+    contactForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        alert(
+            "Thank you! Your message has been received."
+        );
+
+        contactForm.reset();
+
+    });
+
+}
+
+
+// Display news when page loads
+renderNews(news);
